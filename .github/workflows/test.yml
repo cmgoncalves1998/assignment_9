@@ -63,9 +63,7 @@ jobs:
           format: 'table'
           exit-code: '0'
           ignore-unfixed: true
-          exit-code: '0'
           severity: 'CRITICAL,HIGH'
-          
   deploy:
     needs: security
     if: github.ref == 'refs/heads/main'
@@ -86,7 +84,7 @@ jobs:
           push: true
           tags: |
             christianmgoncalves1/601_module9:latest
-           christianmgoncalves1/601_module9:${{ github.sha }}
+            christianmgoncalves1/601_module9:${{ github.sha }}
           platforms: linux/amd64,linux/arm64
           cache-from: type=registry,ref=christianmgoncalves1/601_module9
           cache-to: type=inline,mode=max
